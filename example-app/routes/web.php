@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blogs', function () {
+    return view('blog_list');
+});
+
+Route::get('/blogs/create', [App\Http\Controllers\PostController::class, 'create']);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
